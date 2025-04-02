@@ -8,14 +8,45 @@
 }
 
 :root {
-    --bg-body: #C5E4E7;
-    --bg-main: #FFF;
+    font-size: 62.5%;
+    --bg-jagged-ice: #C5E4E7;
+    --bg-white: #FFF;
+    --sherpa-blue: #00474B;
+    --greyish-turquoise: #5E747D;
+    --topaz: #26C2AE;
+    --regent-grey: #7F9D9F;
+    --black-squeeze:#F3F9FA;
 }
 
 body {
-    background: var(--bg-body);
+    font-size: 1.6rem;
+    background: var(--bg-jagged-ice);
+}
+
+header {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
 }
 
 main {
-    background: var(--bg-main);
+    background: var(--bg-white);
+    padding: 3.2rem 2.4rem;
+    border-radius: 2.5rem 2.5rem 0 0;
+
+}
+
+.info {
+    padding-inline: 0.8rem;
+
+}
+
+.info strong {
+    color: var(--greyish-turquoise);
+}
+ 
+.input-box  { 
+    margin-top: 0.6rem;
+    background-color: var(--black-squeeze);
 }
