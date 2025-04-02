@@ -16,7 +16,8 @@
     --topaz: #26C2AE;
     --regent-grey: #7F9D9F;
     --black-squeeze:#F3F9FA;
-}
+    --beetle-green: #547878;
+}   
 
 body {
     font-size: 1.6rem;
@@ -38,15 +39,81 @@ main {
 }
 
 .info {
+    div {
+        margin-bottom: 3.2rem;
+    }
+
     padding-inline: 0.8rem;
 
-}
+    strong {
+        color: var(--greyish-turquoise);
+    }
 
-.info strong {
-    color: var(--greyish-turquoise);
+    .input-box  { 
+        margin-top: 0.6rem;
+        background-color: var(--black-squeeze);
+        display: flex;
+        align-items: center;
+        padding: .6rem 1.8rem;
+        border-radius: .5rem;
+    
+        input {
+            border: none;
+            background-color: transparent;
+            text-align: right;
+            width: 100%;
+            font-size: 2.4rem;
+            outline: none;
+            font-weight: 700;
+            color: var(--sherpa-blue);
+        }
+    
+        input::placeholder {
+            color: var(--sherpa-blue);
+            opacity: 0.35;
+        }
+    
+        &:has(input:focus) {
+            outline: 2px solid var(--topaz);
+        }
+
+        .tip {
+            div {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.6rem;
+            }
+            
+            button {
+                font-size: 2.5rem;
+                background-color: var(--sherpa-blue);
+                color: var(--bg-white);
+                font-weight: 700;
+                border: none;
+                padding-block: .6rem;
+                border-radius: .5rem;
+            }
+    
+            input {
+                width: 100%;
+                font-size: 2.4rem;
+                text-align: center;
+                border: none;
+                background-color: var(--black-squeeze);
+                border-radius: .5rem;
+                padding-block: .6rem;
+                font-weight: 700;
+                color: var(--sherpa-blue);
+                
+                &::placeholder {
+                    color: var(--beetle-green);
+                }
+
+                &:focus {
+                    outline: 2px solid var(--topaz);
+                }
+            }
+        }
+    }
 }
  
-.input-box  { 
-    margin-top: 0.6rem;
-    background-color: var(--black-squeeze);
-}
