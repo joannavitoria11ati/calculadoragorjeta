@@ -2,7 +2,21 @@ let bill = 0
 let tip = 0
 let numberOfPeople = 0
 
-let billInput = document.querySelector("#bill")
-billInput.addEventListener("input", () => {
-    bill = billInput.valueAsNumber
-})
+function receiveBillValue() {
+    bill = document.querySelector("#bill").valueAsNumber
+}
+
+function receiveNumberOfPeopleValue() {
+    numberOfPeople = document.querySelector("#people").valueAsNumber
+}
+
+function receiveTipPercentageValue(value) {
+    tipPercentage = value/100
+
+    if (buttonSelected !== null) {
+        buttonSelected.classList.remove("button-selected")
+    }
+
+    buttonSelected = document.querySelector(`#button-${value}`)
+    buttonSelected.classList.add("button-selected")
+}

@@ -40,11 +40,11 @@ main {
 }
 
 .info {
+    padding-inline: 0.8rem;
+
     div {
         margin-bottom: 3.2rem;
     }
-
-    padding-inline: 0.8rem;
 
     strong {
         color: var(--greyish-turquoise);
@@ -80,29 +80,24 @@ main {
 
         .tip {
             div {
+                margin-top: 1.6rem;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.6rem;
             }
             
-            button {
-                font-size: 2.5rem;
-                background-color: var(--sherpa-blue);
-                color: var(--bg-white);
-                font-weight: 700;
-                border: none;
-                padding-block: .6rem;
-                border-radius: .5rem;
+            .button-selected {
+                background: var(--topaz);
             }
-    
+
             input {
                 width: 100%;
                 font-size: 2.4rem;
                 text-align: center;
                 border: none;
-                background-color: var(--black-squeeze);
-                border-radius: .5rem;
-                padding-block: .6rem;
+                background: var(--black-squeeze);
+                border-radius: 0.5rem;
+                padding-block: 0.6rem;
                 font-weight: 700;
                 color: var(--sherpa-blue);
                 
@@ -116,6 +111,16 @@ main {
             }
         }
     }
+}
+
+.tip button {
+    font-size: 2.4rem;
+    background: var(--sherpa-blue);
+    color: var(--bg-white);
+    font-weight: 700;
+    border: none;
+    padding-block: 0.6rem;
+    border-radius: 0.5rem;
 }
  
 .results {
@@ -159,6 +164,11 @@ main {
     }
 }
 
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
+}
+
 @media(min-width: 920px) {
     header {
         margin-top: 5rem;
@@ -182,17 +192,13 @@ main {
             grid-template-columns: repeat(3, 1fr);
 
             button:hover {
-                background-color: var(--topaz);
+                background: var(--water-leaf);
                 cursor: pointer;
                 transition: .5s;
             }
         }
     }
 
-    input::-webkit-inner-spin-button,
-    input::-webkit-outer-spin-button {
-        display: none;
-    }
 
     .results {
         display: flex;

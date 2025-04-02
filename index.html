@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,60 +14,60 @@
         <img src="./novo-diretorio/images/logo.svg" alt="splitter calculator logo">
     </header>
     <main>
-       <section class="info">
-        <div class="bill">
-            <strong>Bill</strong>
+        <section class="info">
+            <div class="bill">
+                <strong>Bill</strong>
 
-            <div class="input-box">
-                <img src="./novo-diretorio/images/icon-dollar.svg" alt="icon dollar">
-                <input type="number" id="Bill" placeholder="0">
+                <div class="input-box">
+                    <img src="./novo-diretorio/images/icon-dollar.svg" alt="icon dollar">
+                    <input oninput="receiveBillValue()" id="Bill" placeholder="0">
+                </div>
             </div>
-        </div>
 
-        <div class="tip">
-            <strong>Select Tip %</strong>
+            <div class="tip">
+                <strong>Select Tip %</strong>
 
+                <div>
+                    <button onclick="receiveTipPercentageValue(5)" id="button-5">5%</button>
+                    <button onclick="receiveTipPercentageValue(10)" id="button-10">10%</button>
+                    <button onclick="receiveTipPercentageValue(15)" id="button-15">15%</button>
+                    <button onclick="receiveTipPercentageValue(25)" id="button-25">25%</button>
+                    <button onclick="receiveTipPercentageValue(50)" id="button-50">50%</button>
+                    <input type="number" id="Custom-tip" placeholder="Custom">
+                </div>
+            </div>
+
+            <div class="people">
+                <strong>Number of People</strong>
+
+                <div class="input-box">
+                    <img src="./novo-diretorio/images/icon-person.svg" alt="icon person">
+                    <input oninput="receiveNumberOfPeopleValue()" type="number" id="people" placeholder="0">
+                </div>
+            </div>
+        </section>
+
+        <section class="results">
             <div>
-                <button>5%</button>
-                <button>10%</button>
-                <button>15%</button>
-                <button>25%</button>
-                <button>50%</button>
-                <input type="number" id="Custom-tip" placeholder="Custom">
+                <div class="amount">
+                    <p>
+                        Tip Amount <br> <span>/ person</span>
+                    </p>
+
+                    <strong>$4.27</strong>
+                </div>
+
+                <div class="total">
+                    <p>
+                        Total <br> <span>/ person</span>
+                    </p>
+
+                    <strong>$32.79</strong>
+                </div>
             </div>
-        </div>
-
-        <div class="people">
-            <strong>Number of People</strong>
-
-            <div class="input-box">
-                <img src="./novo-diretorio/images/icon-person.svg" alt="icon person">
-                <input type="number" id="people" placeholder="0">
-            </div>
-        </div>
-       </section>
-
-       <section class="results">
-        <div>
-            <div class="amount">
-                <p>
-                    Tip Amount <br> <span>/ person</span>
-                </p>
-    
-                <strong>$4.27</strong>
-             </div>
-    
-             <div class="total">
-                <p>
-                    Total <br> <span>/ person</span>
-                </p>
-    
-                <strong>$32.79</strong>
-             </div>
-        </div>
-
-        <button>Reset</button>
-       </section>
+            <button>Reset</button>
+        </section>
     </main>
 </body>
+
 </html>
