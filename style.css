@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,38 +9,40 @@
 
 :root {
     font-size: 62.5%;
-    --bg-jagged-ice: #C5E4E7;
-    --bg-white: #FFF;
+
+    --jagged-ice: #C5E4E7;
+    --white: #FFF;
+    --greyish-turquoise: #5E7A7D;
+    --squeeze: #F3F9FA;
     --sherpa-blue: #00474B;
-    --greyish-turquoise: #5E747D;
     --topaz: #26C2AE;
-    --regent-grey: #7F9D9F;
-    --black-squeeze:#F3F9FA;
     --beetle-green: #547878;
+    --regent-grey: #7F9D9F;
     --water-leaf: #9FE8DF;
-}   
+}
 
 body {
     font-size: 1.6rem;
-    background: var(--bg-jagged-ice);
+    background: var(--jagged-ice);
 }
 
 header {
     padding-top: 5rem;
     padding-bottom: 4rem;
+
     display: flex;
     justify-content: center;
 }
 
 main {
-    background: var(--bg-white);
+    background: var(--white);
     padding: 3.2rem 2.4rem;
     border-radius: 2.5rem 2.5rem 0 0;
-
+    max-width: 92rem;
 }
 
 .info {
-    padding-inline: 0.8rem;
+    padding-inline: .8rem;
 
     div {
         margin-bottom: 3.2rem;
@@ -48,83 +50,81 @@ main {
 
     strong {
         color: var(--greyish-turquoise);
+        display: block;
+        margin-bottom: .6rem;
     }
 
-    .input-box  { 
-        margin-top: 0.6rem;
-        background-color: var(--black-squeeze);
+    .input-box {
+        background: var(--squeeze);
+        padding: .6rem 1.8rem;
         display: flex;
         align-items: center;
-        padding: .6rem 1.8rem;
         border-radius: .5rem;
-    
+
         input {
+            font-size: 2.4rem;
             border: none;
-            background-color: transparent;
+            background: transparent;
             text-align: right;
             width: 100%;
-            font-size: 2.4rem;
-            outline: none;
             font-weight: 700;
+            outline: none;
             color: var(--sherpa-blue);
         }
-    
+
         input::placeholder {
             color: var(--sherpa-blue);
             opacity: 0.35;
         }
-    
-        &:has(input:focus) {
-            outline: 2px solid var(--topaz);
+    }
+
+    .input-box:has(input:focus) {
+        outline: 2px solid var(--topaz);
+    }
+
+    .tip div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+        margin-top: .8rem;
+
+        button {
+            font-size: 2.4rem;
+            color: var(--white);
+            font-weight: 700;
+            border: none;
+            border-radius: .5rem;
+            padding-block: .6rem;
+            background: var(--sherpa-blue);
         }
 
-        .tip {
-            div {
-                margin-top: 1.6rem;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.6rem;
-            }
-            
-            .button-selected {
-                background: var(--topaz);
-            }
+        .button-selected {
+            background: var(--topaz);
+        }
 
-            input {
-                width: 100%;
-                font-size: 2.4rem;
-                text-align: center;
-                border: none;
-                background: var(--black-squeeze);
-                border-radius: 0.5rem;
-                padding-block: 0.6rem;
-                font-weight: 700;
-                color: var(--sherpa-blue);
-                
-                &::placeholder {
-                    color: var(--beetle-green);
-                }
+        input {
+            width: 100%;
+            font-size: 2.4rem;
+            text-align: center;
+            font-weight: 700;
+            border: none;
+            color: var(--sherpa-blue);
+            background: var(--squeeze);
+            border-radius: .5rem;
+        }
 
-                &:focus {
-                    outline: 2px solid var(--topaz);
-                }
-            }
+        input::placeholder {
+            color: var(--beetle-green);
+        }
+
+        input:focus {
+            outline: 2px solid var(--topaz);
         }
     }
 }
 
-.tip button {
-    font-size: 2.4rem;
-    background: var(--sherpa-blue);
-    color: var(--bg-white);
-    font-weight: 700;
-    border: none;
-    padding-block: 0.6rem;
-    border-radius: 0.5rem;
-}
- 
 .results {
-    background-color: var(--sherpa-blue);
+    background: var(--sherpa-blue);
     border-radius: 1.5rem;
     padding: 2.4rem;
 
@@ -133,15 +133,15 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
 
         p {
-            color: var(--bg-white);
+            color: var(--white);
             font-weight: 700;
+            font-size: 1.3rem;
 
             span {
                 color: var(--regent-grey);
-                font-size: 1.3rem;
             }
         }
 
@@ -150,17 +150,17 @@ main {
             font-size: 3.2rem;
         }
     }
+
     button {
-        margin-top: 1.6rem;
-        width: 100%;
-        background-color: var(--topaz);
-        border: none;
-        border-radius: .5rem;
         padding-block: .9rem;
+        width: 100%;
+        border: none;
+        background: var(--topaz);
+        border-radius: .5rem;
+        text-transform: uppercase;
         font-size: 2rem;
         color: var(--sherpa-blue);
         font-weight: 700;
-        text-transform: uppercase;
     }
 }
 
@@ -170,25 +170,18 @@ input::-webkit-outer-spin-button {
 }
 
 @media(min-width: 920px) {
-    header {
-        margin-top: 5rem;
-    }
-
     main {
         display: flex;
-        max-width: 92rem;
         margin-inline: auto;
+        gap: 4.8rem;
         padding: 4.8rem;
         border-radius: 2.5rem;
-        gap: 4.8rem;
 
         section {
             width: 100%;
         }
-    }
 
-    .info {
-        .tip div {
+        .info .tip div {
             grid-template-columns: repeat(3, 1fr);
 
             button:hover {
@@ -197,24 +190,27 @@ input::-webkit-outer-spin-button {
                 transition: .5s;
             }
         }
-    }
 
+        .results {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-    .results {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 4rem;
+            .amount p,
+            .total p {
+                font-size: 1.6rem;
+            }
 
-        .amount strong,
-        .total strong {
-            font-size: 4.8rem;
-        }
+            .amount strong,
+            .total strong {
+                font-size: 4.8rem; 
+            }
 
-        button:hover {
-            background-color: var(--water-leaf);
-            transition: .5s;
-            cursor: pointer;
+            button:hover {
+                background: var(--water-leaf);
+                cursor: pointer;
+                transition: .5s;
+            }
         }
     }
 }
