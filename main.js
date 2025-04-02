@@ -4,10 +4,13 @@ let numberOfPeople = 0
 
 function receiveBillValue() {
     bill = document.querySelector("#bill").valueAsNumber
+
+    calculateResults()
 }
 
 function receiveNumberOfPeopleValue() {
     numberOfPeople = document.querySelector("#people").valueAsNumber
+    calculateResults()
 }
 
 function receiveTipPercentageValue(value) {
@@ -21,8 +24,6 @@ function receiveTipPercentageValue(value) {
         buttonSelected.classList.remove("button-selected")
     }
 
-    
-
     buttonSelected = document.querySelector(`#button-${value}`)
     buttonSelected.classList.add("button-selected")
 }
@@ -30,11 +31,25 @@ function receiveTipPercentageValue(value) {
 function receiveCustomTipPercentageValue() {
     tipPercentage = document.querySelector("#custom-tip").valueAsNumber/100
 
+    removeClassButtonSelected()
+    calculateResults()
 }
 
 function removeClassButtonSelected() {
     if (buttonSelected !== null) {
         buttonSelected.classList.remove("button-selected")
         buttonSelected = null
+    }
+}
+
+function calculateResults() {
+    if (bill !== 0 && tipPercentage !== 0 && numberOfPeople !== 0) {
+        let strongAmount = document.querySelector(".amount strong")
+        let tipAmountPerson = bill * tipPercentage / numberOfPeople
+        strongAmount.innerText = `$${tipAmountPerson.toFixed(2)}`
+
+        let strongTotal = document.querySelector(".total strong")
+        let totalPerson = (bill / numberOfPeople) + tipAmountPerson
+        strongTotal.innerText = `$${totalPerson.toFixed(2)}`
     }
 }
